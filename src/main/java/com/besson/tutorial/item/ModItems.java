@@ -13,6 +13,13 @@ public class ModItems {
     public static final DeferredItem<Item> RAW_ICE_ETHER = ITEMS.registerSimpleItem("raw_ice_ether");
     public static final DeferredItem<Item> CARDBOARD = ITEMS.registerSimpleItem("material/cardboard");
 
+    public static final DeferredItem<Item> CORN = ITEMS.registerSimpleItem("corn",
+            () -> new Item.Properties().food(ModFoods.CORN));
+    public static final DeferredItem<Item> STRAWBERRY = ITEMS.registerSimpleItem("strawberry",
+            () -> new Item.Properties().food(ModFoods.STRAWBERRY, ModConsumables.STRAWBERRY));
+    public static final DeferredItem<Item> CHEESE = ITEMS.registerSimpleItem("cheese",
+            () -> new Item.Properties().food(ModFoods.CHEESE, ModConsumables.CHEESE));
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
         TutorialMod.LOGGER.info("Registering Mod Items for " + TutorialMod.MOD_ID);

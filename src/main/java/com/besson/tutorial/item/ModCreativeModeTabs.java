@@ -25,6 +25,10 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.RAW_ICE_ETHER);
                         output.accept(ModItems.CARDBOARD);
 
+                        output.accept(ModItems.CORN);
+                        output.accept(ModItems.STRAWBERRY);
+                        output.accept(ModItems.CHEESE);
+
                         output.accept(ModBlocks.ICE_ETHER_BLOCK);
                         output.accept(ModBlocks.RAW_ICE_ETHER_BLOCK);
                         output.accept(ModBlocks.ICE_ETHER_ORE);
