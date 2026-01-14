@@ -25,5 +25,6 @@ public class TutorialModDataGenerator {
         event.createProvider(ModEnUsLangProvider::new);
         event.createProvider(ModZhCnLangProvider::new);
         event.createProvider(ModModelsProvider::new);
+        event.createProvider(ModDataMapsProvider::new);
     }
 }

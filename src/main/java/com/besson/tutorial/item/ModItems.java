@@ -1,6 +1,7 @@
 package com.besson.tutorial.item;
 
 import com.besson.tutorial.TutorialMod;
+import com.besson.tutorial.item.custom.ModFuelItem;
 import net.minecraft.world.item.Item;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -19,6 +20,9 @@ public class ModItems {
             () -> new Item.Properties().food(ModFoods.STRAWBERRY, ModConsumables.STRAWBERRY));
     public static final DeferredItem<Item> CHEESE = ITEMS.registerSimpleItem("cheese",
             () -> new Item.Properties().food(ModFoods.CHEESE, ModConsumables.CHEESE));
+
+    public static final DeferredItem<Item> ANTHRACITE = ITEMS.registerItem("anthracite", p -> new ModFuelItem(p, 1600));
+    public static final DeferredItem<Item> ANTHRACITE2 = ITEMS.registerSimpleItem("anthracite2");
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
