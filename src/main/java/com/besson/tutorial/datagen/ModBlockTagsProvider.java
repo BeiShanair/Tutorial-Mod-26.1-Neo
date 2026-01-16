@@ -34,5 +34,12 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .addTag(BlockTags.REDSTONE_ORES)
                 .addTag(BlockTags.COPPER_ORES)
                 .add(ModBlocks.ICE_ETHER_ORE.get());
+
+        tag(BlockTags.FENCES)
+                .add(ModBlocks.ICE_ETHER_FENCE.get());
+        tag(BlockTags.FENCE_GATES)
+                .add(ModBlocks.ICE_ETHER_FENCE_GATE.get());
+        tag(BlockTags.WALLS)
+                .add(ModBlocks.ICE_ETHER_WALL.get());
     }
 }
