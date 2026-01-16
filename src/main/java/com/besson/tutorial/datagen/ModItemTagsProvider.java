@@ -1,8 +1,11 @@
 package com.besson.tutorial.datagen;
 
 import com.besson.tutorial.TutorialMod;
+import com.besson.tutorial.item.ModItems;
+import com.besson.tutorial.tag.ModItemTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
+import net.minecraft.world.item.Items;
 import net.neoforged.neoforge.common.data.ItemTagsProvider;
 
 import java.util.concurrent.CompletableFuture;
@@ -14,6 +17,8 @@ public class ModItemTagsProvider extends ItemTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider registries) {
-
+        tag(ModItemTags.SUGAR_TAG)
+                .add(Items.BEETROOT)
+                .add(ModItems.STRAWBERRY.get());
     }
 }

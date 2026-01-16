@@ -1,5 +1,6 @@
 package com.besson.tutorial.item.custom;
 
+import com.besson.tutorial.tag.ModBlockTags;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
@@ -66,6 +67,6 @@ public class ProspectorItem extends Item {
     }
 
     private boolean isCorrectBlock(BlockState blockState) {
-        return blockState.is(Blocks.DIAMOND_ORE) || blockState.is(Blocks.DEEPSLATE_DIAMOND_ORE);
+        return blockState.is(ModBlockTags.ORE_TAGS);
     }
 }

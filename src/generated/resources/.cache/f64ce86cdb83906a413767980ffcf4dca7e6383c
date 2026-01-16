@@ -1,3 +1,4 @@
-// 26.1-snapshot-2	2026-01-14T14:59:26.1501715	Tags for minecraft:block mod id tutorial
+// 26.1-snapshot-2	2026-01-16T10:41:10.9247842	Tags for minecraft:block mod id tutorial
 da34ac06d380dcc282aebd493042986cb8318d58 data/minecraft/tags/block/mineable/pickaxe.json
 6a41ff3a500def9c9dab7e2eef45c3be1ebafd2a data/minecraft/tags/block/needs_iron_tool.json
+418d6d3e6cbd7b35e57f8b9b560aab55766acc41 data/tutorial/tags/block/ore_tags.json
