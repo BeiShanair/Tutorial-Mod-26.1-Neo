@@ -32,6 +32,8 @@ public class ModModelsProvider extends ModelProvider {
         itemModels.generateFlatItem(ModItems.ANTHRACITE.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(ModItems.ANTHRACITE2.get(), ModelTemplates.FLAT_ITEM);
 
+        itemModels.generateFlatItem(ModItems.PROSPECTOR.get(), ModelTemplates.FLAT_ITEM);
+
         blockModels.createTrivialCube(ModBlocks.ICE_ETHER_BLOCK.get());
         blockModels.createTrivialCube(ModBlocks.RAW_ICE_ETHER_BLOCK.get());
         blockModels.createTrivialCube(ModBlocks.ICE_ETHER_ORE.get());
