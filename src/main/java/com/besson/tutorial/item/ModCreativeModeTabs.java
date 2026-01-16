@@ -34,6 +34,13 @@ public class ModCreativeModeTabs {
 
                         output.accept(ModItems.PROSPECTOR);
 
+                        output.accept(ModItems.FIRE_ETHER);
+                        output.accept(ModItems.FIRE_ETHER_SWORD);
+                        output.accept(ModItems.FIRE_ETHER_PICKAXE);
+                        output.accept(ModItems.FIRE_ETHER_SHOVEL);
+                        output.accept(ModItems.FIRE_ETHER_HOE);
+                        output.accept(ModItems.FIRE_ETHER_AXE);
+
                         output.accept(ModBlocks.ICE_ETHER_BLOCK);
                         output.accept(ModBlocks.RAW_ICE_ETHER_BLOCK);
                         output.accept(ModBlocks.ICE_ETHER_ORE);
