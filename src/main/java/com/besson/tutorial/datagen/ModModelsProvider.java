@@ -41,6 +41,9 @@ public class ModModelsProvider extends ModelProvider {
         itemModels.generateFlatItem(ModItems.FIRE_ETHER_HOE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
         itemModels.generateFlatItem(ModItems.FIRE_ETHER_SWORD.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
 
+        itemModels.generateFlatItem(ModItems.PICKAXE_AXE_ITEM.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModels.generateFlatItem(ModItems.PICKAXE_AXE_ITEM2.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+
 //        blockModels.createTrivialCube(ModBlocks.ICE_ETHER_BLOCK.get());
         blockModels.createTrivialCube(ModBlocks.RAW_ICE_ETHER_BLOCK.get());
         blockModels.createTrivialCube(ModBlocks.ICE_ETHER_ORE.get());
