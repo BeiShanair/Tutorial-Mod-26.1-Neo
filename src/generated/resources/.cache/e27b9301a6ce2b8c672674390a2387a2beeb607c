@@ -1,3 +1,5 @@
-// 26.1-snapshot-2	2026-01-16T13:39:50.4084904	Tags for minecraft:item mod id tutorial
+// 26.1-snapshot-2	2026-01-17T14:12:36.8110632	Tags for minecraft:item mod id tutorial
+f3a7ead0601868cc6401303eb0956bbe7c1948be data/minecraft/tags/item/trimmable_armor.json
 f4b33aebc4e765c02bda47b587e2dba5b385ec87 data/tutorial/tags/item/fire_ether_tool_materials.json
+c35690dd6c539a917df73ca447decd3c7f4e2cd7 data/tutorial/tags/item/ice_ether_armor_materials.json
 a2d72f3dffedd20075c73a06a2314bb95c04c0e0 data/tutorial/tags/item/sugar_tag.json

@@ -44,6 +44,11 @@ public class ModModelsProvider extends ModelProvider {
         itemModels.generateFlatItem(ModItems.PICKAXE_AXE_ITEM.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
         itemModels.generateFlatItem(ModItems.PICKAXE_AXE_ITEM2.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
 
+        itemModels.generateFlatItem(ModItems.ICE_ETHER_HELMET.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(ModItems.ICE_ETHER_CHESTPLATE.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(ModItems.ICE_ETHER_LEGGINGS.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(ModItems.ICE_ETHER_BOOTS.get(), ModelTemplates.FLAT_ITEM);
+
 //        blockModels.createTrivialCube(ModBlocks.ICE_ETHER_BLOCK.get());
         blockModels.createTrivialCube(ModBlocks.RAW_ICE_ETHER_BLOCK.get());
         blockModels.createTrivialCube(ModBlocks.ICE_ETHER_ORE.get());

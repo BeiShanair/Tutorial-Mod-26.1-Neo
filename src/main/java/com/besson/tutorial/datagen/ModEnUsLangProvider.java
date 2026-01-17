@@ -36,6 +36,11 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModItems.PICKAXE_AXE_ITEM.get(), "Pickaxe Axe");
         add(ModItems.PICKAXE_AXE_ITEM2.get(), "Pickaxe Axe 2");
 
+        add(ModItems.ICE_ETHER_HELMET.get(), "Ice Ether Helmet");
+        add(ModItems.ICE_ETHER_CHESTPLATE.get(), "Ice Ether Chestplate");
+        add(ModItems.ICE_ETHER_LEGGINGS.get(), "Ice Ether Leggings");
+        add(ModItems.ICE_ETHER_BOOTS.get(), "Ice Ether Boots");
+
         add(ModBlocks.ICE_ETHER_BLOCK.get(), "Ice Ether Block");
         add(ModBlocks.RAW_ICE_ETHER_BLOCK.get(), "Raw Ice Ether Block");
         add(ModBlocks.ICE_ETHER_ORE.get(), "Ice Ether Ore");

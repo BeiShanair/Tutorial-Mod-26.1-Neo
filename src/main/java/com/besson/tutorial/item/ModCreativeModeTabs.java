@@ -44,6 +44,11 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.PICKAXE_AXE_ITEM);
                         output.accept(ModItems.PICKAXE_AXE_ITEM2);
 
+                        output.accept(ModItems.ICE_ETHER_HELMET);
+                        output.accept(ModItems.ICE_ETHER_CHESTPLATE);
+                        output.accept(ModItems.ICE_ETHER_LEGGINGS);
+                        output.accept(ModItems.ICE_ETHER_BOOTS);
+
                         output.accept(ModBlocks.ICE_ETHER_BLOCK);
                         output.accept(ModBlocks.RAW_ICE_ETHER_BLOCK);
                         output.accept(ModBlocks.ICE_ETHER_ORE);

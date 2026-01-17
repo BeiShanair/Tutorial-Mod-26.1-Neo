@@ -5,6 +5,7 @@ import com.besson.tutorial.item.ModItems;
 import com.besson.tutorial.tag.ModItemTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
 import net.neoforged.neoforge.common.data.ItemTagsProvider;
 
@@ -23,5 +24,13 @@ public class ModItemTagsProvider extends ItemTagsProvider {
 
         tag(ModItemTags.FIRE_ETHER_TOOL_MATERIALS)
                 .add(ModItems.FIRE_ETHER.get());
+
+        tag(ModItemTags.ICE_ETHER_ARMOR_MATERIALS)
+                .add(ModItems.ICE_ETHER.get());
+        tag(ItemTags.TRIMMABLE_ARMOR)
+                .add(ModItems.ICE_ETHER_HELMET.get())
+                .add(ModItems.ICE_ETHER_CHESTPLATE.get())
+                .add(ModItems.ICE_ETHER_LEGGINGS.get())
+                .add(ModItems.ICE_ETHER_BOOTS.get());
     }
 }

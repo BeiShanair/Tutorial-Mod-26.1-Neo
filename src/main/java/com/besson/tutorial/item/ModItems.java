@@ -9,6 +9,7 @@ import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.HoeItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ShovelItem;
+import net.minecraft.world.item.equipment.ArmorType;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -49,6 +50,15 @@ public class ModItems {
             p -> new Item(p.tool(ModToolMaterials.FIRE_ETHER, ModBlockTags.PICKAXE_AXE_MINEABLE, 5.0f, -2.4f, 0.0f)));
     public static final DeferredItem<Item> PICKAXE_AXE_ITEM2 = ITEMS.registerItem("pickaxe_axe_item2",
             p -> new PickaxeAxeItem(ModToolMaterials.FIRE_ETHER, 5.0F, -2.4F, p));
+
+    public static final DeferredItem<Item> ICE_ETHER_HELMET = ITEMS.registerItem("ice_ether_helmet",
+            p -> new Item(p.humanoidArmor(ModArmorMaterials.ICE_ETHER, ArmorType.HELMET)));
+    public static final DeferredItem<Item> ICE_ETHER_CHESTPLATE = ITEMS.registerItem("ice_ether_chestplate",
+            p -> new Item(p.humanoidArmor(ModArmorMaterials.ICE_ETHER, ArmorType.CHESTPLATE)));
+    public static final DeferredItem<Item> ICE_ETHER_LEGGINGS = ITEMS.registerItem("ice_ether_leggings",
+            p -> new Item(p.humanoidArmor(ModArmorMaterials.ICE_ETHER, ArmorType.LEGGINGS)));
+    public static final DeferredItem<Item> ICE_ETHER_BOOTS = ITEMS.registerItem("ice_ether_boots",
+            p -> new Item(p.humanoidArmor(ModArmorMaterials.ICE_ETHER, ArmorType.BOOTS)));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
