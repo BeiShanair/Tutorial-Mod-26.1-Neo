@@ -32,5 +32,11 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 .add(ModItems.ICE_ETHER_CHESTPLATE.get())
                 .add(ModItems.ICE_ETHER_LEGGINGS.get())
                 .add(ModItems.ICE_ETHER_BOOTS.get());
+
+        tag(ModItemTags.ICE_ETHER_ARMOR)
+                .add(ModItems.ICE_ETHER_HELMET.get())
+                .add(ModItems.ICE_ETHER_CHESTPLATE.get())
+                .add(ModItems.ICE_ETHER_LEGGINGS.get())
+                .add(ModItems.ICE_ETHER_BOOTS.get());
     }
 }
