@@ -52,5 +52,8 @@ public class ModEnUsLangProvider extends LanguageProvider {
 
         add("itemGroup.tutorial", "Tutorial Tab");
         add("itemGroup.tutorial2", "Tutorial Tab2");
+
+        add("tooltip.tutorial.pickaxe_axe_tooltip.shift", "This is a item that can be used as a pickaxe and an axe");
+        add("tooltip.tutorial.pickaxe_axe_tooltip", "Hold §6§n§l§oSHIFT§r§r§r§r for more info!");
     }
 }
