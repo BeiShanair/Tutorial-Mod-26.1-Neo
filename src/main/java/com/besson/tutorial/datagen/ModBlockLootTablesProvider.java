@@ -1,6 +1,7 @@
 package com.besson.tutorial.datagen;
 
 import com.besson.tutorial.block.ModBlocks;
+import com.besson.tutorial.block.custom.CornCrop;
 import com.besson.tutorial.block.custom.StrawberryCrop;
 import com.besson.tutorial.item.ModItems;
 import net.minecraft.advancements.criterion.StatePropertiesPredicate;
@@ -48,7 +49,13 @@ public class ModBlockLootTablesProvider extends BlockLootSubProvider {
 
         LootItemCondition.Builder isStrawberryMaxAge = LootItemBlockStatePropertyCondition.hasBlockStateProperties(ModBlocks.STRAWBERRY_CROP.get())
                 .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(StrawberryCrop.AGE, 5));
-        add(ModBlocks.STRAWBERRY_CROP.get(), createCropDrops(ModBlocks.STRAWBERRY_CROP.get(), ModItems.STRAWBERRY.get(), ModItems.STRAWBERRY_SEEDS.get(), isStrawberryMaxAge));
+        add(ModBlocks.STRAWBERRY_CROP.get(),
+                createCropDrops(ModBlocks.STRAWBERRY_CROP.get(), ModItems.STRAWBERRY.get(), ModItems.STRAWBERRY_SEEDS.get(), isStrawberryMaxAge));
+
+        LootItemCondition.Builder isCornMaxAge = LootItemBlockStatePropertyCondition.hasBlockStateProperties(ModBlocks.CORN_CROP.get())
+                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(CornCrop.AGE, 8));
+        add(ModBlocks.CORN_CROP.get(),
+                createCropDrops(ModBlocks.CORN_CROP.get(), ModItems.CORN.get(), ModItems.CORN.get(), isCornMaxAge));
     }
 
     protected LootTable.Builder createCopperOreLikeDrops(Block block, Item item) {

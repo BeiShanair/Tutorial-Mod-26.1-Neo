@@ -1,6 +1,7 @@
 package com.besson.tutorial.block;
 
 import com.besson.tutorial.TutorialMod;
+import com.besson.tutorial.block.custom.CornCrop;
 import com.besson.tutorial.block.custom.StrawberryCrop;
 import com.besson.tutorial.item.ModItems;
 import net.minecraft.world.level.block.*;
@@ -45,6 +46,14 @@ public class ModBlocks {
             p -> new TrapDoorBlock(BlockSetType.IRON, p), () -> BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_TRAPDOOR), true);
 
     public static final DeferredBlock<StrawberryCrop> STRAWBERRY_CROP = registerBlock("strawberry_crop", StrawberryCrop::new,
+            () -> BlockBehaviour.Properties.of()
+                    .noCollision()
+                    .randomTicks()
+                    .instabreak()
+                    .sound(SoundType.CROP)
+                    .pushReaction(PushReaction.DESTROY), false);
+
+    public static final DeferredBlock<CornCrop> CORN_CROP = registerBlock("corn_crop", CornCrop::new,
             () -> BlockBehaviour.Properties.of()
                     .noCollision()
                     .randomTicks()

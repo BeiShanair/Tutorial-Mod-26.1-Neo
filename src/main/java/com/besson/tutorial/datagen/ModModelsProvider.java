@@ -2,16 +2,22 @@ package com.besson.tutorial.datagen;
 
 import com.besson.tutorial.TutorialMod;
 import com.besson.tutorial.block.ModBlocks;
+import com.besson.tutorial.block.custom.CornCrop;
 import com.besson.tutorial.block.custom.StrawberryCrop;
 import com.besson.tutorial.item.ModItems;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.ModelProvider;
+import net.minecraft.client.data.models.blockstates.MultiVariantGenerator;
+import net.minecraft.client.data.models.blockstates.PropertyDispatch;
 import net.minecraft.client.data.models.model.ModelTemplates;
+import net.minecraft.client.data.models.model.TextureMapping;
 import net.minecraft.core.Holder;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 
 import java.util.stream.Stream;
 
@@ -66,6 +72,17 @@ public class ModModelsProvider extends ModelProvider {
                 .trapdoor(ModBlocks.ICE_ETHER_TRAPDOOR.get());
 
         blockModels.createCropBlock(ModBlocks.STRAWBERRY_CROP.get(), StrawberryCrop.AGE, 0, 1, 2, 3, 4, 5);
+
+        blockModels.blockStateOutput
+                .accept(MultiVariantGenerator.dispatch(ModBlocks.CORN_CROP.get())
+                                .with(PropertyDispatch.initial(CornCrop.AGE)
+                                                .generate(age -> BlockModelGenerators.plainVariant(
+                                                        blockModels.createSuffixedVariant(ModBlocks.CORN_CROP.get(),
+                                                                "_stage" + age, ModelTemplates.CROSS, TextureMapping::cross)
+                                                        )
+                                                )
+                                )
+                );
     }
 
     @Override

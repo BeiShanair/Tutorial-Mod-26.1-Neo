@@ -1,4 +1,5 @@
-// 26.1-snapshot-3	2026-01-20T15:34:06.1840945	Loot Tables
+// 26.1-snapshot-3	2026-01-20T16:10:06.5803174	Loot Tables
+ba6396b7feecc30f912cfc65aeb031830ebd6977 data/tutorial/loot_table/blocks/corn_crop.json
 3db187dd5da50ae79374978cbf5596e7b53391dd data/tutorial/loot_table/blocks/ice_ether_block.json
 9503002b8e788ea40f4ffa0fdae68a6eb91cfaf2 data/tutorial/loot_table/blocks/ice_ether_button.json
 2d7f9d52bd74fe6d124db238268eb1270a77aa46 data/tutorial/loot_table/blocks/ice_ether_door.json
