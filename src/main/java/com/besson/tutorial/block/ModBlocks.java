@@ -1,11 +1,13 @@
 package com.besson.tutorial.block;
 
 import com.besson.tutorial.TutorialMod;
+import com.besson.tutorial.block.custom.StrawberryCrop;
 import com.besson.tutorial.item.ModItems;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.WoodType;
+import net.minecraft.world.level.material.PushReaction;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -41,6 +43,14 @@ public class ModBlocks {
             p -> new DoorBlock(BlockSetType.IRON, p), () -> BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_DOOR), true);
     public static final DeferredBlock<TrapDoorBlock> ICE_ETHER_TRAPDOOR = registerBlock("ice_ether_trapdoor",
             p -> new TrapDoorBlock(BlockSetType.IRON, p), () -> BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_TRAPDOOR), true);
+
+    public static final DeferredBlock<StrawberryCrop> STRAWBERRY_CROP = registerBlock("strawberry_crop", StrawberryCrop::new,
+            () -> BlockBehaviour.Properties.of()
+                    .noCollision()
+                    .randomTicks()
+                    .instabreak()
+                    .sound(SoundType.CROP)
+                    .pushReaction(PushReaction.DESTROY), false);
 
     private static <T extends Block>DeferredBlock<T> registerBlock(String name, Function<BlockBehaviour.Properties, T> func, Supplier<BlockBehaviour.Properties> properties, boolean shouldRegisterItem) {
         DeferredBlock<T> block = BLOCKS.registerBlock(name, func, properties);

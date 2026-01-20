@@ -41,6 +41,8 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModItems.ICE_ETHER_LEGGINGS.get(), "Ice Ether Leggings");
         add(ModItems.ICE_ETHER_BOOTS.get(), "Ice Ether Boots");
 
+        add(ModItems.STRAWBERRY_SEEDS.get(), "Strawberry Seeds");
+
         add(ModBlocks.ICE_ETHER_BLOCK.get(), "Ice Ether Block");
         add(ModBlocks.RAW_ICE_ETHER_BLOCK.get(), "Raw Ice Ether Block");
         add(ModBlocks.ICE_ETHER_ORE.get(), "Ice Ether Ore");

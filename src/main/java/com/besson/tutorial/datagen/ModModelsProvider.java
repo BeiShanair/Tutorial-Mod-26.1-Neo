@@ -2,6 +2,7 @@ package com.besson.tutorial.datagen;
 
 import com.besson.tutorial.TutorialMod;
 import com.besson.tutorial.block.ModBlocks;
+import com.besson.tutorial.block.custom.StrawberryCrop;
 import com.besson.tutorial.item.ModItems;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
@@ -63,6 +64,8 @@ public class ModModelsProvider extends ModelProvider {
                 .wall(ModBlocks.ICE_ETHER_WALL.get())
                 .door(ModBlocks.ICE_ETHER_DOOR.get())
                 .trapdoor(ModBlocks.ICE_ETHER_TRAPDOOR.get());
+
+        blockModels.createCropBlock(ModBlocks.STRAWBERRY_CROP.get(), StrawberryCrop.AGE, 0, 1, 2, 3, 4, 5);
     }
 
     @Override

@@ -33,5 +33,6 @@ public class TutorialModClient {
 
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.ICE_ETHER_DOOR.get(), ChunkSectionLayer.CUTOUT);
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.ICE_ETHER_TRAPDOOR.get(), ChunkSectionLayer.CUTOUT);
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.STRAWBERRY_CROP.get(), ChunkSectionLayer.CUTOUT);
     }
 }

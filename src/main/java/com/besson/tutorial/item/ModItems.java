@@ -1,14 +1,12 @@
 package com.besson.tutorial.item;
 
 import com.besson.tutorial.TutorialMod;
+import com.besson.tutorial.block.ModBlocks;
 import com.besson.tutorial.item.custom.ModFuelItem;
 import com.besson.tutorial.item.custom.PickaxeAxeItem;
 import com.besson.tutorial.item.custom.ProspectorItem;
 import com.besson.tutorial.tag.ModBlockTags;
-import net.minecraft.world.item.AxeItem;
-import net.minecraft.world.item.HoeItem;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ShovelItem;
+import net.minecraft.world.item.*;
 import net.minecraft.world.item.equipment.ArmorType;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -59,6 +57,9 @@ public class ModItems {
             p -> new Item(p.humanoidArmor(ModArmorMaterials.ICE_ETHER, ArmorType.LEGGINGS)));
     public static final DeferredItem<Item> ICE_ETHER_BOOTS = ITEMS.registerItem("ice_ether_boots",
             p -> new Item(p.humanoidArmor(ModArmorMaterials.ICE_ETHER, ArmorType.BOOTS)));
+
+    public static final DeferredItem<Item> STRAWBERRY_SEEDS = ITEMS.registerItem("strawberry_seeds",
+            p -> new BlockItem(ModBlocks.STRAWBERRY_CROP.get(), p.useItemDescriptionPrefix()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
