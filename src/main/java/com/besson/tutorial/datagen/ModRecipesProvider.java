@@ -47,14 +47,14 @@ public class ModRecipesProvider extends RecipeProvider {
                 .unlockedBy("has_stone", has(Items.STONE))
                 .save(output);
 
-        simpleCookingRecipe("campfire_cooking", RecipeSerializer.CAMPFIRE_COOKING_RECIPE, CampfireCookingRecipe::new,
+        simpleCookingRecipe("campfire_cooking", CampfireCookingRecipe::new,
                 600, ModItems.RAW_ICE_ETHER, ModItems.ICE_ETHER, 0.35f);
     }
 
     protected <T extends AbstractCookingRecipe> void simpleCookingRecipe(
-            String source, RecipeSerializer<T> type, AbstractCookingRecipe.Factory<T> factory, int cookingTime, ItemLike base, ItemLike result, float experience
+            String source, AbstractCookingRecipe.Factory<T> factory, int cookingTime, ItemLike base, ItemLike result, float experience
     ) {
-        SimpleCookingRecipeBuilder.generic(Ingredient.of(base), RecipeCategory.FOOD, result, experience, cookingTime, type, factory)
+        SimpleCookingRecipeBuilder.generic(Ingredient.of(base), RecipeCategory.FOOD, CookingBookCategory.MISC, result, experience, cookingTime, factory)
                 .unlockedBy(getHasName(base), this.has(base))
                 .save(this.output, TutorialMod.MOD_ID + ":" + getItemName(result) + "_from_" + source);
     }
@@ -91,15 +91,14 @@ public class ModRecipesProvider extends RecipeProvider {
     }
 
     protected void oreSmelting(List<ItemLike> smeltables, RecipeCategory category, ItemLike result, float experience, int cookingTime, String group) {
-        this.oreCooking(RecipeSerializer.SMELTING_RECIPE, SmeltingRecipe::new, smeltables, category, result, experience, cookingTime, group, "_from_smelting");
+        this.oreCooking(SmeltingRecipe::new, smeltables, category, result, experience, cookingTime, group, "_from_smelting");
     }
 
     protected void oreBlasting(List<ItemLike> smeltables, RecipeCategory category, ItemLike result, float experience, int cookingTime, String group) {
-        this.oreCooking(RecipeSerializer.BLASTING_RECIPE, BlastingRecipe::new, smeltables, category, result, experience, cookingTime, group, "_from_blasting");
+        this.oreCooking(BlastingRecipe::new, smeltables, category, result, experience, cookingTime, group, "_from_blasting");
     }
 
     protected <T extends AbstractCookingRecipe> void oreCooking(
-            RecipeSerializer<T> serializer,
             AbstractCookingRecipe.Factory<T> factory,
             List<ItemLike> smeltables,
             RecipeCategory category,
@@ -110,7 +109,7 @@ public class ModRecipesProvider extends RecipeProvider {
             String fromDesc
     ) {
         for (ItemLike item : smeltables) {
-            SimpleCookingRecipeBuilder.generic(Ingredient.of(item), category, result, experience, cookingTime, serializer, factory)
+            SimpleCookingRecipeBuilder.generic(Ingredient.of(item), category, CookingBookCategory.MISC, result, experience, cookingTime, factory)
                     .group(group)
                     .unlockedBy(getHasName(item), this.has(item))
                     .save(this.output, TutorialMod.MOD_ID + ":" + getItemName(result) + fromDesc + "_" + getItemName(item));

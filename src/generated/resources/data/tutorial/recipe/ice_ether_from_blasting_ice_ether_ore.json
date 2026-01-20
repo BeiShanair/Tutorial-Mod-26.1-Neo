@@ -6,7 +6,6 @@
   "group": "ice_ether",
   "ingredient": "tutorial:ice_ether_ore",
   "result": {
-    "count": 1,
     "id": "tutorial:ice_ether"
   }
 }
