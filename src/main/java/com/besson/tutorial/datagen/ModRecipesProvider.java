@@ -30,9 +30,12 @@ public class ModRecipesProvider extends RecipeProvider {
 
     @Override
     protected void buildRecipes() {
-        oreSmelting(ICE_EHTER_LIST, RecipeCategory.MISC, ModItems.ICE_ETHER, 0.7f, 200, "ice_ether");
-        oreBlasting(ICE_EHTER_LIST, RecipeCategory.MISC, ModItems.ICE_ETHER, 0.7f, 100, "ice_ether");
+        
+        oreSmelting(ICE_EHTER_LIST, RecipeCategory.MISC, CookingBookCategory.MISC, ModItems.ICE_ETHER, 0.7f, 200, "ice_ether");
+        oreBlasting(ICE_EHTER_LIST, RecipeCategory.MISC, CookingBookCategory.MISC, ModItems.ICE_ETHER, 0.7f, 100, "ice_ether");
 
+        simpleCookingRecipe("campfire_cooking", CampfireCookingRecipe::new, 600, ModItems.RAW_ICE_ETHER, ModItems.ICE_ETHER, 0.35f);
+        
         nineBlockStorageRecipes(RecipeCategory.MISC, ModItems.ICE_ETHER, RecipeCategory.BUILDING_BLOCKS, ModBlocks.ICE_ETHER_BLOCK);
 
         shaped(RecipeCategory.FOOD, Items.SUGAR, 3)
@@ -46,17 +49,6 @@ public class ModRecipesProvider extends RecipeProvider {
                 .unlockedBy("has_raw_ice_ether", has(ModItems.RAW_ICE_ETHER))
                 .unlockedBy("has_stone", has(Items.STONE))
                 .save(output);
-
-        simpleCookingRecipe("campfire_cooking", CampfireCookingRecipe::new,
-                600, ModItems.RAW_ICE_ETHER, ModItems.ICE_ETHER, 0.35f);
-    }
-
-    protected <T extends AbstractCookingRecipe> void simpleCookingRecipe(
-            String source, AbstractCookingRecipe.Factory<T> factory, int cookingTime, ItemLike base, ItemLike result, float experience
-    ) {
-        SimpleCookingRecipeBuilder.generic(Ingredient.of(base), RecipeCategory.FOOD, CookingBookCategory.MISC, result, experience, cookingTime, factory)
-                .unlockedBy(getHasName(base), this.has(base))
-                .save(this.output, TutorialMod.MOD_ID + ":" + getItemName(result) + "_from_" + source);
     }
 
     protected void nineBlockStorageRecipes(RecipeCategory unpackedFormCategory, ItemLike unpackedForm, RecipeCategory packedFormCategory, ItemLike packedForm) {
@@ -65,16 +57,7 @@ public class ModRecipesProvider extends RecipeProvider {
         );
     }
 
-    protected void nineBlockStorageRecipes(
-            RecipeCategory unpackedFormCategory,
-            ItemLike unpackedForm,
-            RecipeCategory packedFormCategory,
-            ItemLike packedForm,
-            String packingRecipeId,
-            @Nullable String packingRecipeGroup,
-            String unpackingRecipeId,
-            @Nullable String unpackingRecipeGroup
-    ) {
+    protected void nineBlockStorageRecipes(RecipeCategory unpackedFormCategory, ItemLike unpackedForm, RecipeCategory packedFormCategory, ItemLike packedForm, String packingRecipeId, @Nullable String packingRecipeGroup, String unpackingRecipeId, @Nullable String unpackingRecipeGroup) {
         this.shapeless(unpackedFormCategory, unpackedForm, 9)
                 .requires(packedForm)
                 .group(unpackingRecipeGroup)
@@ -90,26 +73,24 @@ public class ModRecipesProvider extends RecipeProvider {
                 .save(this.output, ResourceKey.create(Registries.RECIPE, Identifier.fromNamespaceAndPath(TutorialMod.MOD_ID, packingRecipeId)));
     }
 
-    protected void oreSmelting(List<ItemLike> smeltables, RecipeCategory category, ItemLike result, float experience, int cookingTime, String group) {
-        this.oreCooking(SmeltingRecipe::new, smeltables, category, result, experience, cookingTime, group, "_from_smelting");
+    protected <T extends AbstractCookingRecipe> void simpleCookingRecipe(String source, AbstractCookingRecipe.Factory<T> factory, int cookingTime, ItemLike base, ItemLike result, float experience) {
+        SimpleCookingRecipeBuilder.generic(Ingredient.of(base), RecipeCategory.FOOD, CookingBookCategory.FOOD, result, experience, cookingTime, factory)
+                .unlockedBy(getHasName(base), this.has(base))
+                .save(this.output, TutorialMod.MOD_ID + ":" + getItemName(result) + "_from_" + source);
+    }
+    
+    protected void oreSmelting(List<ItemLike> smeltables, RecipeCategory craftingCategory, CookingBookCategory cookingCategory, ItemLike result, float experience, int cookingTime, String group) {
+        this.oreCooking(SmeltingRecipe::new, smeltables, craftingCategory, cookingCategory, result, experience, cookingTime, group, "_from_smelting");
     }
 
-    protected void oreBlasting(List<ItemLike> smeltables, RecipeCategory category, ItemLike result, float experience, int cookingTime, String group) {
-        this.oreCooking(BlastingRecipe::new, smeltables, category, result, experience, cookingTime, group, "_from_blasting");
+    protected void oreBlasting(List<ItemLike> smeltables, RecipeCategory craftingCategory, CookingBookCategory cookingCategory, ItemLike result, float experience, int cookingTime, String group) {
+        this.oreCooking(BlastingRecipe::new, smeltables, craftingCategory, cookingCategory, result, experience, cookingTime, group, "_from_blasting");
     }
 
-    protected <T extends AbstractCookingRecipe> void oreCooking(
-            AbstractCookingRecipe.Factory<T> factory,
-            List<ItemLike> smeltables,
-            RecipeCategory category,
-            ItemLike result,
-            float experience,
-            int cookingTime,
-            String group,
-            String fromDesc
-    ) {
+    protected <T extends AbstractCookingRecipe> void oreCooking(AbstractCookingRecipe.Factory<T> factory, List<ItemLike> smeltables, RecipeCategory craftingCategory, CookingBookCategory cookingCategory,
+            ItemLike result, float experience, int cookingTime, String group, String fromDesc) {
         for (ItemLike item : smeltables) {
-            SimpleCookingRecipeBuilder.generic(Ingredient.of(item), category, CookingBookCategory.MISC, result, experience, cookingTime, factory)
+            SimpleCookingRecipeBuilder.generic(Ingredient.of(item), craftingCategory, cookingCategory, result, experience, cookingTime, factory)
                     .group(group)
                     .unlockedBy(getHasName(item), this.has(item))
                     .save(this.output, TutorialMod.MOD_ID + ":" + getItemName(result) + fromDesc + "_" + getItemName(item));
